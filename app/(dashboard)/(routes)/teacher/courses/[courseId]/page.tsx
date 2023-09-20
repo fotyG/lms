@@ -5,6 +5,8 @@ import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 import { IconBadge } from "@/components/icon-badge";
 
+import TitleForm from "./_components/title-form";
+
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth();
 
@@ -51,6 +53,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
             <IconBadge icon={LayoutDashboard} />
             <h2 className="text-xl">Customize your course</h2>
           </div>
+          <TitleForm courseId={course.id} initialData={course} />
         </div>
       </div>
     </div>
