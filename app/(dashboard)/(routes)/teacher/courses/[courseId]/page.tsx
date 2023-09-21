@@ -6,6 +6,8 @@ import { auth } from "@clerk/nextjs";
 import { IconBadge } from "@/components/icon-badge";
 
 import TitleForm from "./_components/title-form";
+import ImageForm from "./_components/image-form";
+import DescriptionForm from "./_components/description-form";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth();
@@ -54,6 +56,8 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
             <h2 className="text-xl">Customize your course</h2>
           </div>
           <TitleForm courseId={course.id} initialData={course} />
+          <DescriptionForm courseId={course.id} initialData={course} />
+          <ImageForm courseId={course.id} initialData={course} />
         </div>
       </div>
     </div>
